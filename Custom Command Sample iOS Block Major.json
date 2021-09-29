@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "2406db17-77d0-4876-b3a2-9f9fe31f653e",
+		"name": "Block Major Version",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Stop Major Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "aw-tenant-code",
+						"type": "text",
+						"value": "YOURAPIKEY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CommandXML\":\"<dict><key>RequestType</key><string>Settings</string><key>Settings</key><array><dict><key>Item</key><string>SoftwareUpdateSettings</string><key>RecommendationCadence</key><integer>1</integer></dict></array></dict>\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/mdm/devices/:Device/commands?command=CustomMdmCommand",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"mdm",
+						"devices",
+						":Device",
+						"commands"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "CustomMdmCommand"
+						}
+					],
+					"variable": [
+						{
+							"key": "Device",
+							"value": "${airwatch.device.device_id}"
+						}
+					]
+				},
+				"description": "Will force minor Update not Major ."
+			},
+			"response": [
+				{
+					"name": "Stop Major Update",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "{{YOURAPIKEY}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"CommandXML\":\"<dict><key>RequestType</key><string>Settings</string><key>Settings</key><array><dict><key>Item</key><string>SoftwareUpdateSettings</string><key>RecommendationCadence</key><integer>1</integer></dict></array></dict>\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/mdm/devices/:Device/commands?command=CustomMdmCommand",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"devices",
+								":Device",
+								"commands"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "CustomMdmCommand"
+								}
+							],
+							"variable": [
+								{
+									"key": "Device",
+									"value": "${airwatch.device.device_id}"
+								}
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Correlation-ID",
+							"value": "fe9db1a1-3c74-4623-ae68-abd6cab34137"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "250000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "249977"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1633009704"
+						},
+						{
+							"key": "X-Api-Version",
+							"value": "v1"
+						},
+						{
+							"key": "api-supported-versions",
+							"value": "1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Sep 2021 13:56:22 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
