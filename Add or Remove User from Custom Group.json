@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "8e03725b-885c-4bb3-98c1-7f8d5152e170",
+		"name": "Custom Group Add / Remove ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User to Custom Group",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "aw-tenant-code",
+						"type": "text",
+						"value": "{{YOURAPIKEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;version=2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/system/usergroups/:GroupID/user/:UserID/addusertogroup",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"system",
+						"usergroups",
+						":GroupID",
+						"user",
+						":UserID",
+						"addusertogroup"
+					],
+					"variable": [
+						{
+							"key": "GroupID",
+							"value": "1234",
+							"description": "ID of the Group"
+						},
+						{
+							"key": "UserID",
+							"value": "${airwatch.user.user_id}",
+							"description": "ID of the User"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add User to Custom Group",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Basic {{Auth}}"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "{{YOURAPIKEY}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json;version=2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{API}}/API/system/usergroups/:GroupID/user/:UserID/addusertogroup",
+							"protocol": "https",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"API",
+								"system",
+								"usergroups",
+								":GroupID",
+								"user",
+								":UserID",
+								"addusertogroup"
+							],
+							"variable": [
+								{
+									"key": "GroupID",
+									"value": "1234",
+									"description": "ID of the Group"
+								},
+								{
+									"key": "UserID",
+									"value": "${airwatch.user.user_id}",
+									"description": "ID of the User"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Correlation-ID",
+							"value": "fb06fc03-df0c-4e00-90ef-bbd1dfc1994f"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "250000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "249991"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1645521811"
+						},
+						{
+							"key": "X-Api-Version",
+							"value": "v1"
+						},
+						{
+							"key": "api-supported-versions",
+							"value": "1"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Feb 2022 09:23:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Remove User to Custom Group Copy",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "aw-tenant-code",
+						"type": "text",
+						"value": "{{YOURAPIKEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;version=2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/system/usergroups/:GroupID/user/:UserID/removeuserfromgroup",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"system",
+						"usergroups",
+						":GroupID",
+						"user",
+						":UserID",
+						"removeuserfromgroup"
+					],
+					"variable": [
+						{
+							"key": "GroupID",
+							"value": "1234",
+							"description": "ID Of Group"
+						},
+						{
+							"key": "UserID",
+							"value": "${airwatch.user.user_id}",
+							"description": "ID Of User"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Remove User to Custom Group Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Basic {{Auth}}"
+							},
+							{
+								"key": "aw-tenant-code",
+								"type": "text",
+								"value": "{{YOURAPIKEY}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json;version=2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{API}}/API/system/usergroups/:GroupID/user/:UserID/removeuserfromgroup",
+							"protocol": "https",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"API",
+								"system",
+								"usergroups",
+								":GroupID",
+								"user",
+								":UserID",
+								"removeuserfromgroup"
+							],
+							"variable": [
+								{
+									"key": "GroupID",
+									"value": "1234",
+									"description": "ID Of Group"
+								},
+								{
+									"key": "UserID",
+									"value": "${airwatch.user.user_id}",
+									"description": "ID Of User"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Correlation-ID",
+							"value": "76b889b5-5b0c-4d1d-824b-890e8b31913a"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "250000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "249992"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1645521811"
+						},
+						{
+							"key": "X-Api-Version",
+							"value": "v1"
+						},
+						{
+							"key": "api-supported-versions",
+							"value": "1"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Feb 2022 09:23:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
