@@ -7,6 +7,7 @@
 	"item": [
 		{
 			"name": "Disable Lost Mode",
+			"id": "EUCPatrickDisableLostMode",
 			"request": {
 				"method": "POST",
 				"header": [
