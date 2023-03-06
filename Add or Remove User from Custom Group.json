@@ -7,6 +7,7 @@
 	"item": [
 		{
 			"name": "Add User to Custom Group",
+			"id": "EUCPatrickAddUsertoCustomGroup",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"user-agent": true
