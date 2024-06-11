@@ -1,0 +1,1084 @@
+{
+    "name": "ITSM Connector",
+    "widgets": [
+        {
+            "name": "Incident by Category",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident.category"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 30,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.incident_id",
+                    "servicenow_itsm.incident.category"
+                ]
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 12
+            },
+            "chart_type": "DONUT",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident.category"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 30,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.incident_id",
+                            "servicenow_itsm.incident.category"
+                        ]
+                    },
+                    "chart_type": "DONUT",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Incidents by Device Platform ",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident.device_platform"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.device_uuid",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 30,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.device_platform",
+                    "servicenow_itsm.incident.device_uuid"
+                ]
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 12
+            },
+            "chart_type": "DONUT",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident.device_platform"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.device_uuid",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 30,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.device_platform",
+                            "servicenow_itsm.incident.device_uuid"
+                        ]
+                    },
+                    "chart_type": "DONUT",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "ITSM Connector Actions ",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 1,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "servicenow_itsm.incident_updates.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident_updates.itsm_action_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident_updates.device_uuid",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "servicenow_itsm.incident_updates.itsm_action_name IS NOT NULL AND  servicenow_itsm.incident_updates.itsm_action_name NOT IN ( 'UEM' , 'WS1UEM' , 'Experience' )",
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident_updates"
+                    ]
+                },
+                "cardinality": 100,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident_updates.itsm_action_name",
+                    "servicenow_itsm.incident_updates.device_uuid"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "logical_operator": "AND",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                            "operator": "IS NOT NULL",
+                            "operands": [],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                            "operator": "NOT IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "UEM"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "WS1UEM"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Experience"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                },
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "operand_collection_present": false,
+                    "logical_operator": "AND",
+                    "lhs": {
+                        "parenthesized": false,
+                        "nested_map_attribute": false,
+                        "nested_attribute": false,
+                        "custom_attribute": false,
+                        "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                        "operator": "IS NOT NULL",
+                        "operands": [],
+                        "operand_collection_present": false
+                    },
+                    "rhs": {
+                        "parenthesized": false,
+                        "nested_map_attribute": false,
+                        "nested_attribute": false,
+                        "custom_attribute": false,
+                        "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                        "operator": "NOT IN",
+                        "operands": [
+                            {
+                                "operand_type": "BasicOperand",
+                                "data_type": "STRING",
+                                "value": "UEM"
+                            },
+                            {
+                                "operand_type": "BasicOperand",
+                                "data_type": "STRING",
+                                "value": "WS1UEM"
+                            },
+                            {
+                                "operand_type": "BasicOperand",
+                                "data_type": "STRING",
+                                "value": "Experience"
+                            }
+                        ],
+                        "operand_collection_present": true
+                    }
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "chart_type": "VERTICAL",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 1,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "servicenow_itsm.incident_updates.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident_updates.itsm_action_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident_updates.device_uuid",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "servicenow_itsm.incident_updates.itsm_action_name IS NOT NULL AND  servicenow_itsm.incident_updates.itsm_action_name NOT IN ( 'UEM' , 'WS1UEM' , 'Experience' )",
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident_updates"
+                            ]
+                        },
+                        "cardinality": 100,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident_updates.itsm_action_name",
+                            "servicenow_itsm.incident_updates.device_uuid"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "logical_operator": "AND",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                                    "operator": "IS NOT NULL",
+                                    "operands": [],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                                    "operator": "NOT IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "UEM"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "WS1UEM"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Experience"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        },
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "operand_collection_present": false,
+                            "logical_operator": "AND",
+                            "lhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                                "operator": "IS NOT NULL",
+                                "operands": [],
+                                "operand_collection_present": false
+                            },
+                            "rhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                                "operator": "NOT IN",
+                                "operands": [
+                                    {
+                                        "operand_type": "BasicOperand",
+                                        "data_type": "STRING",
+                                        "value": "UEM"
+                                    },
+                                    {
+                                        "operand_type": "BasicOperand",
+                                        "data_type": "STRING",
+                                        "value": "WS1UEM"
+                                    },
+                                    {
+                                        "operand_type": "BasicOperand",
+                                        "data_type": "STRING",
+                                        "value": "Experience"
+                                    }
+                                ],
+                                "operand_collection_present": true
+                            }
+                        }
+                    },
+                    "chart_type": "VERTICAL",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Top 5 Software Sub Category ",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident.sub_category"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "servicenow_itsm.incident.category CONTAINS SUBSTRING 'Software'",
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 5,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.incident_id",
+                    "servicenow_itsm.incident.sub_category"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.category",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Software"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                },
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "servicenow_itsm.incident.category",
+                    "operator": "CONTAINS SUBSTRING",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Software"
+                        }
+                    ],
+                    "operand_collection_present": false
+                }
+            },
+            "top_left": {
+                "row_number": 6,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 8,
+                "column_number": 12
+            },
+            "chart_type": "DONUT",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident.sub_category"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "servicenow_itsm.incident.category CONTAINS SUBSTRING 'Software'",
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 5,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.incident_id",
+                            "servicenow_itsm.incident.sub_category"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident.category",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Software"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        },
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.category",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Software"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    },
+                    "chart_type": "DONUT",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Incidents by Priority",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident.priority"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 30,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.incident_id",
+                    "servicenow_itsm.incident.priority"
+                ]
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 6
+            },
+            "chart_type": "DONUT",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident.priority"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 30,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.incident_id",
+                            "servicenow_itsm.incident.priority"
+                        ]
+                    },
+                    "chart_type": "DONUT",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Incidents with UEM Devices mapped",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.device_uuid",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "servicenow_itsm.incident.device_uuid IS NOT NULL",
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.device_uuid"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.device_uuid",
+                            "operator": "IS NOT NULL",
+                            "operands": [],
+                            "operand_collection_present": false
+                        }
+                    ]
+                },
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "servicenow_itsm.incident.device_uuid",
+                    "operator": "IS NOT NULL",
+                    "operands": [],
+                    "operand_collection_present": false
+                }
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.device_uuid",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "servicenow_itsm.incident.device_uuid IS NOT NULL",
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.device_uuid"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident.device_uuid",
+                                    "operator": "IS NOT NULL",
+                                    "operands": [],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        },
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.device_uuid",
+                            "operator": "IS NOT NULL",
+                            "operands": [],
+                            "operand_collection_present": false
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Tab Usage",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 1,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "servicenow_itsm.incident_updates.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident_updates.itsm_action_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident_updates.device_uuid",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "servicenow_itsm.incident_updates.itsm_action_name IN ( 'WS1UEM' , 'Experience' )",
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident_updates"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident_updates.itsm_action_name",
+                    "servicenow_itsm.incident_updates.device_uuid"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "WS1UEM"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Experience"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                },
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "WS1UEM"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Experience"
+                        }
+                    ],
+                    "operand_collection_present": true
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 12
+            },
+            "chart_type": "AREA",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 1,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "servicenow_itsm.incident_updates.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident_updates.itsm_action_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident_updates.device_uuid",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "servicenow_itsm.incident_updates.itsm_action_name IN ( 'WS1UEM' , 'Experience' )",
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident_updates"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident_updates.itsm_action_name",
+                            "servicenow_itsm.incident_updates.device_uuid"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "WS1UEM"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Experience"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        },
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident_updates.itsm_action_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "WS1UEM"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Experience"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    },
+                    "chart_type": "AREA",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Top 5 Hardware Sub Category ",
+            "trend_definition": {
+                "trend_mode": "SNAPSHOT",
+                "bucketing_attributes": [
+                    "servicenow_itsm.incident.sub_category"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "servicenow_itsm.incident.category CONTAINS SUBSTRING 'Hardware'",
+                "entities_by_integration": {
+                    "servicenow_itsm": [
+                        "incident"
+                    ]
+                },
+                "cardinality": 5,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "servicenow_itsm.incident.incident_id",
+                    "servicenow_itsm.incident.sub_category"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.category",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Hardware"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                },
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "servicenow_itsm.incident.category",
+                    "operator": "CONTAINS SUBSTRING",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Hardware"
+                        }
+                    ],
+                    "operand_collection_present": false
+                }
+            },
+            "top_left": {
+                "row_number": 6,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 8,
+                "column_number": 6
+            },
+            "chart_type": "DONUT",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "SNAPSHOT",
+                        "bucketing_attributes": [
+                            "servicenow_itsm.incident.sub_category"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "servicenow_itsm.incident.incident_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "servicenow_itsm.incident.category CONTAINS SUBSTRING 'Hardware'",
+                        "entities_by_integration": {
+                            "servicenow_itsm": [
+                                "incident"
+                            ]
+                        },
+                        "cardinality": 5,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "servicenow_itsm.incident.incident_id",
+                            "servicenow_itsm.incident.sub_category"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "servicenow_itsm.incident.category",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Hardware"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        },
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "servicenow_itsm.incident.category",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Hardware"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    },
+                    "chart_type": "DONUT",
+                    "overlay_sequence": 0
+                }
+            ]
+        }
+    ],
+    "created_at": "2024-06-07T07:05:38.517Z"
+}
