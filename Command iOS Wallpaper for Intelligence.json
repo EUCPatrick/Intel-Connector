@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "bdecffdc-f0aa-4f67-a49b-6bc9cfbd07d8",
+		"name": "Wallpaper Command",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "iOS Wallpaper",
+			"id": "EUCPatrickiOSWallpaper",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CommandXML\":\"<dict><key>RequestType</key><string>Settings</string><key>Settings</key><array><dict><key>Image</key><data>INSERTHERE</data><key>Item</key><string>Wallpaper</string><key>Where</key><integer>3</integer></dict></array></dict>\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/mdm/devices/:deviceId/commands?command=CustomMdmCommand",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"mdm",
+								"devices",
+								":deviceId",
+								"commands"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "CustomMdmCommand"
+								}
+							],
+							"variable": [
+								{
+									"key": "deviceId",
+									"value": "${airwatch.device.device_id}"
+								}
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Correlation-ID",
+							"value": "26a6dd03-7446-4227-9922-6597fdaffe09"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "250000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "249948"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1719897838"
+						},
+						{
+							"key": "X-Api-Version",
+							"value": "v1"
+						},
+						{
+							"key": "api-supported-versions",
+							"value": "1"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Jul 2024 06:34:05 GMT"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
