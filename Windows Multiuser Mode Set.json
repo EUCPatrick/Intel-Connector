@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "97448907-1cfc-490a-b346-2ea4403fa183",
+		"name": "Intel Windows Multiuser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "Intel Set Device to Single User",
+			"id": "EUCPatricksetdevicetosingleUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;version=3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"filter\": {\r\n    \"organization_group_uuid\": \"${airwatch.device.org_location_group_guid}\",\r\n    \"device_uuids\": [\r\n      \"${airwatch.device.device_guid}\"\r\n    ]\r\n  },\r\n  \"action_name\": \"CHANGE_TO_SINGLEUSER\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices/action",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices",
+						"action"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Intel Set Device to Multi User",
+			"id": "EUCPatricksetdevicetomultiUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;version=3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"filter\": {\r\n    \"organization_group_uuid\": \"${airwatch.device.org_location_group_guid}\",\r\n    \"device_uuids\": [\r\n      \"${airwatch.device.device_guid}\"\r\n    ]\r\n  },\r\n  \"action_name\": \"CHANGE_TO_MULTIUSER\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices/action",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices",
+						"action"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
