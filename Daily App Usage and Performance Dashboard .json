@@ -1,0 +1,1126 @@
+{
+    "name": "App usage dashboard",
+    "widgets": [
+        {
+            "name": "Apps with Most Time Spent in Foreground Per Day (~last month)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.total_time_in_foreground > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 100,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.total_time_in_foreground"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.total_time_in_foreground > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 100,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.total_time_in_foreground"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "App Usage: Time in Foreground (daily)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 1,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.total_time_in_foreground > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 100,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.total_time_in_foreground"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "chart_type": "LINE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 1,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.total_time_in_foreground > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 100,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.total_time_in_foreground"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.total_time_in_foreground",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "LINE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Weekly Drain by App",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 7,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.battery_drain",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.battery_drain > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 500,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.battery_drain"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.battery_drain",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.battery_drain",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "chart_type": "LINE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 7,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.battery_drain",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.battery_drain > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 500,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.battery_drain"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.battery_drain",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.battery_drain",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "LINE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Apps Consuming the Most Data Per Day (last week)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 7,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.data_usage > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.data_usage"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.data_usage",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.data_usage",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 7,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.data_usage > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.data_usage"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.data_usage",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.data_usage",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Weekly App Data Consumption",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 7,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.data_usage > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.data_usage"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.data_usage",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.data_usage",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 6
+            },
+            "chart_type": "LINE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 7,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.data_usage > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.data_usage"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.data_usage",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.data_usage",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "LINE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Average Data Consumption Per Day - App Lookup Widget",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 7,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 500,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.data_usage"
+                ]
+            },
+            "top_left": {
+                "row_number": 6,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 7,
+                "column_number": 6
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 7,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.data_usage",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 500,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.data_usage"
+                        ]
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Apps Consuming the Most Battery Per Day (last week)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 7,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                    "date_range_order": "DESC"
+                },
+                "bucketing_attributes": [
+                    "apteligent.app_usage_metrics.app_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "apteligent.app_usage_metrics.battery_drain",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "apteligent.app_usage_metrics.battery_drain > 0",
+                "entities_by_integration": {
+                    "apteligent": [
+                        "app_usage_metrics"
+                    ]
+                },
+                "cardinality": 500,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "apteligent.app_usage_metrics.app_name",
+                    "apteligent.app_usage_metrics.battery_drain"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "apteligent.app_usage_metrics.battery_drain",
+                    "operator": ">",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "LONG",
+                            "value": 0
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.battery_drain",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 7,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "apteligent.app_usage_metrics.event_timestamp",
+                            "date_range_order": "DESC"
+                        },
+                        "bucketing_attributes": [
+                            "apteligent.app_usage_metrics.app_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "apteligent.app_usage_metrics.battery_drain",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "apteligent.app_usage_metrics.battery_drain > 0",
+                        "entities_by_integration": {
+                            "apteligent": [
+                                "app_usage_metrics"
+                            ]
+                        },
+                        "cardinality": 500,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "apteligent.app_usage_metrics.app_name",
+                            "apteligent.app_usage_metrics.battery_drain"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "apteligent.app_usage_metrics.battery_drain",
+                            "operator": ">",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "LONG",
+                                    "value": 0
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "apteligent.app_usage_metrics.battery_drain",
+                                    "operator": ">",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "LONG",
+                                            "value": 0
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        }
+    ],
+    "created_at": "2025-02-12T18:18:30.631Z"
+}
