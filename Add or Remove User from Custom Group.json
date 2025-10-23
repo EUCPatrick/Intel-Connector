@@ -17,16 +17,6 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Basic {{Auth}}"
-					},
-					{
-						"key": "aw-tenant-code",
-						"type": "text",
-						"value": "{{YOURAPIKEY}}"
-					},
-					{
 						"key": "Content-Type",
 						"value": "application/json;version=2",
 						"type": "text"
@@ -67,16 +57,6 @@
 					"originalRequest": {
 						"method": "POST",
 						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Basic {{Auth}}"
-							},
-							{
-								"key": "aw-tenant-code",
-								"type": "text",
-								"value": "{{YOURAPIKEY}}"
-							},
 							{
 								"key": "Content-Type",
 								"value": "application/json;version=2",
@@ -156,23 +136,14 @@
 		},
 		{
 			"name": "Remove User to Custom Group Copy",
-			"protocolProfileBehavior": {
+						"id": "EUCPatrickRemoveUsertoCustomGroup",
+						"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
 			"request": {
 				"method": "POST",
 				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Basic {{Auth}}"
-					},
-					{
-						"key": "aw-tenant-code",
-						"type": "text",
-						"value": "{{YOURAPIKEY}}"
-					},
-					{
+									{
 						"key": "Content-Type",
 						"value": "application/json;version=2",
 						"type": "text"
@@ -213,16 +184,6 @@
 					"originalRequest": {
 						"method": "POST",
 						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Basic {{Auth}}"
-							},
-							{
-								"key": "aw-tenant-code",
-								"type": "text",
-								"value": "{{YOURAPIKEY}}"
-							},
 							{
 								"key": "Content-Type",
 								"value": "application/json;version=2",
