@@ -13,16 +13,6 @@
 				"auth": {
 					"type": "basic",
 					"basic": [
-						{
-							"key": "username",
-							"value": "{{USERAPI}}",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "{{PWAPI}}",
-							"type": "string"
-						}
 					]
 				},
 				"method": "DELETE",
