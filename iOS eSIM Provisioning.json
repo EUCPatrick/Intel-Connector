@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "c4b19102-5a12-4cdb-b66a-a152ebaca249",
+		"name": "iOS eSIM Provisioning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913786"
+	},
+	"item": [
+		{
+			"name": "iOS eSIM Provisioning",
+			"id": "iOSeSIMProvisioning",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CommandXML\":\"<dict><key>RequestType</key><string>RefreshCellularPlans</string><key>eSIMServerURL</key><string>https://eSim.Activation.Server.URL</string></dict>\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/mdm/devices/:deviceId/commands?command=CustomMdmCommand",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"mdm",
+						"devices",
+						":deviceId",
+						"commands"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "CustomMdmCommand",
+							"description": "CustomMdmCommand"
+						}
+					],
+					"variable": [
+						{
+							"key": "deviceId",
+							"value": "${airwatch.device.device_id}",
+							"description": "${airwatch.device.device_id}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
