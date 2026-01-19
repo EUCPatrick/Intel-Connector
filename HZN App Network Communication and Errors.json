@@ -1,0 +1,2127 @@
+{
+    "name": "HZN App Network Communication and Errors",
+    "description": "EUCPatrick - The dashboard delivers a comprehensive view of network communication patterns and error trends for every application across your deployment.",
+    "widgets": [
+        {
+            "name": "Top 10 Apps w/ Most Failed Connections (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.application"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                        "aggregation_function": "COUNT"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.application",
+                    "employee_experience.horizon_app_net_event._event_id",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Failed Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 6,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 8,
+                "column_number": 6
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.application"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                                "aggregation_function": "COUNT"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.application",
+                            "employee_experience.horizon_app_net_event._event_id",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Failed Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Total Successful Requests",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                        "aggregation_function": "SUM"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' , 'New Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.connections_count"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Connection Statistics"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 3
+            },
+            "bottom_right": {
+                "row_number": 1,
+                "column_number": 6
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                                "aggregation_function": "SUM"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' , 'New Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.connections_count"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Connection Statistics"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Users w/ Highest Network Volume (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                        "aggregation_function": "SUM"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.rx_bytes",
+                    "employee_experience.horizon_app_net_event.tx_bytes",
+                    "employee_experience.horizon_app_net_event.connections_count",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Connection Statistics"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 6
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                                "aggregation_function": "SUM"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.rx_bytes",
+                            "employee_experience.horizon_app_net_event.tx_bytes",
+                            "employee_experience.horizon_app_net_event.connections_count",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Connection Statistics"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Windows Devices Sending Data",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    }
+                ],
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.device_name"
+                ]
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 1,
+                "column_number": 3
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            }
+                        ],
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ]
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Max Connection Establishment Time",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                        "aggregation_function": "MAX"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.avg_conn_millis"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 9
+            },
+            "bottom_right": {
+                "row_number": 1,
+                "column_number": 12
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                                "aggregation_function": "MAX"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.avg_conn_millis"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Max Sent Bytes Per Request",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                        "aggregation_function": "MAX"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' , 'Connection Statistics' , 'Closed Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.tx_bytes"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Connection Statistics"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Closed Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Closed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 1,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                                "aggregation_function": "MAX"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' , 'Connection Statistics' , 'Closed Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.tx_bytes"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Closed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Connection Statistics"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Closed Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Top 10 Apps By Successful Connections and Network Volume (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                        "aggregation_function": "SUM"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.rx_bytes",
+                    "employee_experience.horizon_app_net_event.tx_bytes",
+                    "employee_experience.horizon_app_net_event.name",
+                    "employee_experience.horizon_app_net_event.connections_count",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Connection Statistics"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.tx_bytes",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                                "aggregation_function": "SUM"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Connection Statistics' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.rx_bytes",
+                            "employee_experience.horizon_app_net_event.tx_bytes",
+                            "employee_experience.horizon_app_net_event.name",
+                            "employee_experience.horizon_app_net_event.connections_count",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Connection Statistics"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Users w/ Longest New Connection Establishment Time (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.connections_count",
+                    "employee_experience.horizon_app_net_event.avg_conn_millis",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 4,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 6,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.connections_count",
+                            "employee_experience.horizon_app_net_event.avg_conn_millis",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Users w/ Most Failed Connections (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event._event_id",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Failed Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 6,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 8,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event._event_id",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Failed Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Total Connection Failures",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                        "aggregation_function": "COUNT"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event._event_id"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Failed Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 1,
+                "column_number": 9
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event._event_id",
+                                "aggregation_function": "COUNT"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'Failed Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event._event_id"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Failed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Failed Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Top 10 Apps w/ Longest New Connection Establishment Time (Last 28 Days)",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [
+                    "employee_experience.horizon_app_net_event.name"
+                ],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                        "aggregation_function": "SUM"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    },
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                        "aggregation_function": "AVG"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.name",
+                    "employee_experience.horizon_app_net_event.connections_count",
+                    "employee_experience.horizon_app_net_event.avg_conn_millis",
+                    "employee_experience.horizon_app_net_event.device_name"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 4,
+                "column_number": 12
+            },
+            "chart_type": "TABLE",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [
+                            "employee_experience.horizon_app_net_event.name"
+                        ],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.connections_count",
+                                "aggregation_function": "SUM"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.device_name",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            },
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.avg_conn_millis",
+                                "aggregation_function": "AVG"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.name",
+                            "employee_experience.horizon_app_net_event.connections_count",
+                            "employee_experience.horizon_app_net_event.avg_conn_millis",
+                            "employee_experience.horizon_app_net_event.device_name"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "TABLE",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Max Received Bytes Per Request",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 28,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "bucketing_attributes": [],
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                        "aggregation_function": "MAX"
+                    }
+                ],
+                "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' , 'Connection Statistics' , 'Closed Connection' )",
+                "entities_by_integration": {
+                    "employee_experience": [
+                        "horizon_app_net_event"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "all_report_column_attributes": [
+                    "employee_experience.horizon_app_net_event.rx_bytes"
+                ],
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                    "operator": "IN",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "New Connection"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Connection Statistics"
+                        },
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Closed Connection"
+                        }
+                    ],
+                    "operand_collection_present": true
+                },
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Closed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 1,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 12
+            },
+            "chart_type": "METRIC",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 28,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "employee_experience.horizon_app_net_event.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "bucketing_attributes": [],
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "employee_experience.horizon_app_net_event.rx_bytes",
+                                "aggregation_function": "MAX"
+                            }
+                        ],
+                        "filter": "employee_experience.horizon_app_net_event.event_name IN ( 'New Connection' , 'Connection Statistics' , 'Closed Connection' )",
+                        "entities_by_integration": {
+                            "employee_experience": [
+                                "horizon_app_net_event"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "all_report_column_attributes": [
+                            "employee_experience.horizon_app_net_event.rx_bytes"
+                        ],
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "employee_experience.horizon_app_net_event.event_name",
+                            "operator": "IN",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "New Connection"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Connection Statistics"
+                                },
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Closed Connection"
+                                }
+                            ],
+                            "operand_collection_present": true
+                        },
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "employee_experience.horizon_app_net_event.event_name",
+                                    "operator": "IN",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "New Connection"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Connection Statistics"
+                                        },
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Closed Connection"
+                                        }
+                                    ],
+                                    "operand_collection_present": true
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "METRIC",
+                    "overlay_sequence": 0
+                }
+            ]
+        }
+    ],
+    "created_at": "2026-01-19T12:50:41.608Z"
+}
