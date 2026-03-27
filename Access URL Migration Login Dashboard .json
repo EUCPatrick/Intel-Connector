@@ -1,0 +1,894 @@
+{
+    "name": "Access Login URL Dashboard",
+    "widgets": [
+        {
+            "name": "New Access URL",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 60,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 1,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "idm.login.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "idm.login.actorid",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    }
+                ],
+                "filter": "idm.login.values_destination CONTAINS SUBSTRING 'Workspaceone.com'",
+                "entities_by_integration": {
+                    "idm": [
+                        "login"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "idm.login.values_destination",
+                    "operator": "CONTAINS SUBSTRING",
+                    "operands": [
+                        {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Workspaceone.com"
+                        }
+                    ],
+                    "operand_collection_present": false
+                },
+                "all_report_column_attributes": [
+                    "idm.login.actorid"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Workspaceone.com"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 6
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 12
+            },
+            "chart_type": "VERTICAL",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 60,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 1,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "idm.login.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "idm.login.actorid",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            }
+                        ],
+                        "filter": "idm.login.values_destination CONTAINS SUBSTRING 'Workspaceone.com'",
+                        "entities_by_integration": {
+                            "idm": [
+                                "login"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "Workspaceone.com"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        "all_report_column_attributes": [
+                            "idm.login.actorid"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "Workspaceone.com"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "VERTICAL",
+                    "overlay_sequence": 0
+                }
+            ]
+        },
+        {
+            "name": "Old Access URL",
+            "trend_definition": {
+                "trend_mode": "HISTORICAL",
+                "date_range": {
+                    "trend_span": {
+                        "duration": 60,
+                        "unit": "DAYS"
+                    },
+                    "sampling_frequency": {
+                        "duration": 1,
+                        "unit": "DAYS"
+                    },
+                    "start_date_millis": 0,
+                    "round_start_timestamp": true,
+                    "end_date_millis": 0,
+                    "round_end_timestamp": false,
+                    "date_attribute_name": "idm.login.event_timestamp",
+                    "date_range_order": "DESC",
+                    "use_utc_for_timestamp_rounding": false
+                },
+                "counter_definitions": [
+                    {
+                        "aggregate_attribute": "idm.login.actorid",
+                        "aggregation_function": "COUNT_DISTINCT"
+                    }
+                ],
+                "filter": "idm.login.values_destination CONTAINS SUBSTRING 'vidmpreview.com'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.de'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.asia'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.com.au'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.eu'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.co.uk'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.ca'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.com'",
+                "entities_by_integration": {
+                    "idm": [
+                        "login"
+                    ]
+                },
+                "cardinality": 10,
+                "accumulate": false,
+                "ignore_case": true,
+                "include_data_source_in_response": false,
+                "filter_condition": {
+                    "parenthesized": false,
+                    "nested_map_attribute": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "operand_collection_present": false,
+                    "logical_operator": "OR",
+                    "lhs": {
+                        "parenthesized": false,
+                        "nested_map_attribute": false,
+                        "nested_attribute": false,
+                        "custom_attribute": false,
+                        "operand_collection_present": false,
+                        "logical_operator": "OR",
+                        "lhs": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "operand_collection_present": false,
+                            "logical_operator": "OR",
+                            "lhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "operand_collection_present": false,
+                                "logical_operator": "OR",
+                                "lhs": {
+                                    "parenthesized": false,
+                                    "nested_map_attribute": false,
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "operand_collection_present": false,
+                                    "logical_operator": "OR",
+                                    "lhs": {
+                                        "parenthesized": false,
+                                        "nested_map_attribute": false,
+                                        "nested_attribute": false,
+                                        "custom_attribute": false,
+                                        "operand_collection_present": false,
+                                        "logical_operator": "OR",
+                                        "lhs": {
+                                            "parenthesized": false,
+                                            "nested_map_attribute": false,
+                                            "nested_attribute": false,
+                                            "custom_attribute": false,
+                                            "operand_collection_present": false,
+                                            "logical_operator": "OR",
+                                            "lhs": {
+                                                "parenthesized": false,
+                                                "nested_map_attribute": false,
+                                                "nested_attribute": false,
+                                                "custom_attribute": false,
+                                                "attribute": "idm.login.values_destination",
+                                                "operator": "CONTAINS SUBSTRING",
+                                                "operands": [
+                                                    {
+                                                        "operand_type": "BasicOperand",
+                                                        "data_type": "STRING",
+                                                        "value": "vidmpreview.com"
+                                                    }
+                                                ],
+                                                "operand_collection_present": false
+                                            },
+                                            "rhs": {
+                                                "parenthesized": false,
+                                                "nested_map_attribute": false,
+                                                "nested_attribute": false,
+                                                "custom_attribute": false,
+                                                "attribute": "idm.login.values_destination",
+                                                "operator": "CONTAINS SUBSTRING",
+                                                "operands": [
+                                                    {
+                                                        "operand_type": "BasicOperand",
+                                                        "data_type": "STRING",
+                                                        "value": "vmwareidentity.de"
+                                                    }
+                                                ],
+                                                "operand_collection_present": false
+                                            }
+                                        },
+                                        "rhs": {
+                                            "parenthesized": false,
+                                            "nested_map_attribute": false,
+                                            "nested_attribute": false,
+                                            "custom_attribute": false,
+                                            "attribute": "idm.login.values_destination",
+                                            "operator": "CONTAINS SUBSTRING",
+                                            "operands": [
+                                                {
+                                                    "operand_type": "BasicOperand",
+                                                    "data_type": "STRING",
+                                                    "value": "vmwareidentity.asia"
+                                                }
+                                            ],
+                                            "operand_collection_present": false
+                                        }
+                                    },
+                                    "rhs": {
+                                        "parenthesized": false,
+                                        "nested_map_attribute": false,
+                                        "nested_attribute": false,
+                                        "custom_attribute": false,
+                                        "attribute": "idm.login.values_destination",
+                                        "operator": "CONTAINS SUBSTRING",
+                                        "operands": [
+                                            {
+                                                "operand_type": "BasicOperand",
+                                                "data_type": "STRING",
+                                                "value": "vmwareidentity.com.au"
+                                            }
+                                        ],
+                                        "operand_collection_present": false
+                                    }
+                                },
+                                "rhs": {
+                                    "parenthesized": false,
+                                    "nested_map_attribute": false,
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.eu"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            },
+                            "rhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "attribute": "idm.login.values_destination",
+                                "operator": "CONTAINS SUBSTRING",
+                                "operands": [
+                                    {
+                                        "operand_type": "BasicOperand",
+                                        "data_type": "STRING",
+                                        "value": "vmwareidentity.co.uk"
+                                    }
+                                ],
+                                "operand_collection_present": false
+                            }
+                        },
+                        "rhs": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.ca"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    },
+                    "rhs": {
+                        "parenthesized": false,
+                        "nested_map_attribute": false,
+                        "nested_attribute": false,
+                        "custom_attribute": false,
+                        "attribute": "idm.login.values_destination",
+                        "operator": "CONTAINS SUBSTRING",
+                        "operands": [
+                            {
+                                "operand_type": "BasicOperand",
+                                "data_type": "STRING",
+                                "value": "vmwareidentity.com"
+                            }
+                        ],
+                        "operand_collection_present": false
+                    }
+                },
+                "all_report_column_attributes": [
+                    "idm.login.actorid"
+                ],
+                "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "logical_operator": "OR",
+                    "rules": [
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vidmpreview.com"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.de"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.asia"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.com.au"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.eu"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.co.uk"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.ca"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        },
+                        {
+                            "type": "Rule",
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "attribute": "idm.login.values_destination",
+                            "operator": "CONTAINS SUBSTRING",
+                            "operands": [
+                                {
+                                    "operand_type": "BasicOperand",
+                                    "data_type": "STRING",
+                                    "value": "vmwareidentity.com"
+                                }
+                            ],
+                            "operand_collection_present": false
+                        }
+                    ]
+                }
+            },
+            "top_left": {
+                "row_number": 0,
+                "column_number": 0
+            },
+            "bottom_right": {
+                "row_number": 2,
+                "column_number": 6
+            },
+            "chart_type": "VERTICAL",
+            "enabled": true,
+            "included_in_default_dashboard": false,
+            "dataset_templates": [
+                {
+                    "trend_definition": {
+                        "trend_mode": "HISTORICAL",
+                        "date_range": {
+                            "trend_span": {
+                                "duration": 60,
+                                "unit": "DAYS"
+                            },
+                            "sampling_frequency": {
+                                "duration": 1,
+                                "unit": "DAYS"
+                            },
+                            "start_date_millis": 0,
+                            "round_start_timestamp": true,
+                            "end_date_millis": 0,
+                            "round_end_timestamp": false,
+                            "date_attribute_name": "idm.login.event_timestamp",
+                            "date_range_order": "DESC",
+                            "use_utc_for_timestamp_rounding": false
+                        },
+                        "counter_definitions": [
+                            {
+                                "aggregate_attribute": "idm.login.actorid",
+                                "aggregation_function": "COUNT_DISTINCT"
+                            }
+                        ],
+                        "filter": "idm.login.values_destination CONTAINS SUBSTRING 'vidmpreview.com'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.de'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.asia'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.com.au'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.eu'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.co.uk'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.ca'  OR  idm.login.values_destination CONTAINS SUBSTRING 'vmwareidentity.com'",
+                        "entities_by_integration": {
+                            "idm": [
+                                "login"
+                            ]
+                        },
+                        "cardinality": 10,
+                        "accumulate": false,
+                        "ignore_case": true,
+                        "include_data_source_in_response": false,
+                        "filter_condition": {
+                            "parenthesized": false,
+                            "nested_map_attribute": false,
+                            "nested_attribute": false,
+                            "custom_attribute": false,
+                            "operand_collection_present": false,
+                            "logical_operator": "OR",
+                            "lhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "operand_collection_present": false,
+                                "logical_operator": "OR",
+                                "lhs": {
+                                    "parenthesized": false,
+                                    "nested_map_attribute": false,
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "operand_collection_present": false,
+                                    "logical_operator": "OR",
+                                    "lhs": {
+                                        "parenthesized": false,
+                                        "nested_map_attribute": false,
+                                        "nested_attribute": false,
+                                        "custom_attribute": false,
+                                        "operand_collection_present": false,
+                                        "logical_operator": "OR",
+                                        "lhs": {
+                                            "parenthesized": false,
+                                            "nested_map_attribute": false,
+                                            "nested_attribute": false,
+                                            "custom_attribute": false,
+                                            "operand_collection_present": false,
+                                            "logical_operator": "OR",
+                                            "lhs": {
+                                                "parenthesized": false,
+                                                "nested_map_attribute": false,
+                                                "nested_attribute": false,
+                                                "custom_attribute": false,
+                                                "operand_collection_present": false,
+                                                "logical_operator": "OR",
+                                                "lhs": {
+                                                    "parenthesized": false,
+                                                    "nested_map_attribute": false,
+                                                    "nested_attribute": false,
+                                                    "custom_attribute": false,
+                                                    "operand_collection_present": false,
+                                                    "logical_operator": "OR",
+                                                    "lhs": {
+                                                        "parenthesized": false,
+                                                        "nested_map_attribute": false,
+                                                        "nested_attribute": false,
+                                                        "custom_attribute": false,
+                                                        "attribute": "idm.login.values_destination",
+                                                        "operator": "CONTAINS SUBSTRING",
+                                                        "operands": [
+                                                            {
+                                                                "operand_type": "BasicOperand",
+                                                                "data_type": "STRING",
+                                                                "value": "vidmpreview.com"
+                                                            }
+                                                        ],
+                                                        "operand_collection_present": false
+                                                    },
+                                                    "rhs": {
+                                                        "parenthesized": false,
+                                                        "nested_map_attribute": false,
+                                                        "nested_attribute": false,
+                                                        "custom_attribute": false,
+                                                        "attribute": "idm.login.values_destination",
+                                                        "operator": "CONTAINS SUBSTRING",
+                                                        "operands": [
+                                                            {
+                                                                "operand_type": "BasicOperand",
+                                                                "data_type": "STRING",
+                                                                "value": "vmwareidentity.de"
+                                                            }
+                                                        ],
+                                                        "operand_collection_present": false
+                                                    }
+                                                },
+                                                "rhs": {
+                                                    "parenthesized": false,
+                                                    "nested_map_attribute": false,
+                                                    "nested_attribute": false,
+                                                    "custom_attribute": false,
+                                                    "attribute": "idm.login.values_destination",
+                                                    "operator": "CONTAINS SUBSTRING",
+                                                    "operands": [
+                                                        {
+                                                            "operand_type": "BasicOperand",
+                                                            "data_type": "STRING",
+                                                            "value": "vmwareidentity.asia"
+                                                        }
+                                                    ],
+                                                    "operand_collection_present": false
+                                                }
+                                            },
+                                            "rhs": {
+                                                "parenthesized": false,
+                                                "nested_map_attribute": false,
+                                                "nested_attribute": false,
+                                                "custom_attribute": false,
+                                                "attribute": "idm.login.values_destination",
+                                                "operator": "CONTAINS SUBSTRING",
+                                                "operands": [
+                                                    {
+                                                        "operand_type": "BasicOperand",
+                                                        "data_type": "STRING",
+                                                        "value": "vmwareidentity.com.au"
+                                                    }
+                                                ],
+                                                "operand_collection_present": false
+                                            }
+                                        },
+                                        "rhs": {
+                                            "parenthesized": false,
+                                            "nested_map_attribute": false,
+                                            "nested_attribute": false,
+                                            "custom_attribute": false,
+                                            "attribute": "idm.login.values_destination",
+                                            "operator": "CONTAINS SUBSTRING",
+                                            "operands": [
+                                                {
+                                                    "operand_type": "BasicOperand",
+                                                    "data_type": "STRING",
+                                                    "value": "vmwareidentity.eu"
+                                                }
+                                            ],
+                                            "operand_collection_present": false
+                                        }
+                                    },
+                                    "rhs": {
+                                        "parenthesized": false,
+                                        "nested_map_attribute": false,
+                                        "nested_attribute": false,
+                                        "custom_attribute": false,
+                                        "attribute": "idm.login.values_destination",
+                                        "operator": "CONTAINS SUBSTRING",
+                                        "operands": [
+                                            {
+                                                "operand_type": "BasicOperand",
+                                                "data_type": "STRING",
+                                                "value": "vmwareidentity.co.uk"
+                                            }
+                                        ],
+                                        "operand_collection_present": false
+                                    }
+                                },
+                                "rhs": {
+                                    "parenthesized": false,
+                                    "nested_map_attribute": false,
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.ca"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            },
+                            "rhs": {
+                                "parenthesized": false,
+                                "nested_map_attribute": false,
+                                "nested_attribute": false,
+                                "custom_attribute": false,
+                                "attribute": "idm.login.values_destination",
+                                "operator": "CONTAINS SUBSTRING",
+                                "operands": [
+                                    {
+                                        "operand_type": "BasicOperand",
+                                        "data_type": "STRING",
+                                        "value": "vmwareidentity.com"
+                                    }
+                                ],
+                                "operand_collection_present": false
+                            }
+                        },
+                        "all_report_column_attributes": [
+                            "idm.login.actorid"
+                        ],
+                        "filter_condition_nested_rules": {
+                            "type": "RuleSet",
+                            "logical_operator": "OR",
+                            "rules": [
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vidmpreview.com"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.de"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.asia"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.com.au"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.eu"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.co.uk"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.ca"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                },
+                                {
+                                    "type": "Rule",
+                                    "nested_attribute": false,
+                                    "custom_attribute": false,
+                                    "attribute": "idm.login.values_destination",
+                                    "operator": "CONTAINS SUBSTRING",
+                                    "operands": [
+                                        {
+                                            "operand_type": "BasicOperand",
+                                            "data_type": "STRING",
+                                            "value": "vmwareidentity.com"
+                                        }
+                                    ],
+                                    "operand_collection_present": false
+                                }
+                            ]
+                        }
+                    },
+                    "chart_type": "VERTICAL",
+                    "overlay_sequence": 0
+                }
+            ]
+        }
+    ],
+    "created_at": "2026-02-02T12:31:59.144Z"
+}
