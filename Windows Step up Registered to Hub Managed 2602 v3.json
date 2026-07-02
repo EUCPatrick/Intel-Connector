@@ -1,0 +1,191 @@
+{
+  "info": {
+    "_postman_id": "eb97e5fd-7ec0-4a61-9881-bfc8bd230b14",
+    "name": "Stepup Registered to Hub Managed",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "8913716"
+  },
+  "item": [
+    {
+      "name": "Stepup Registered to Hub Managed 2602",
+      "id": "StepupRegisteredtoHubManaged2602",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json;version=3",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"action_name\": \"STEP_UP_TO_HUB_MANAGED\",\n  \"filter\": {\n    \"organization_group_uuid\": \"${airwatch.device.device_location_group_guid}\",\n    \"device_uuids\": [\"${airwatch.device._airwatch_device_guid}\"]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{API}}/API/mdm/devices/action",
+          "protocol": "https",
+          "host": [
+            "{{API}}"
+          ],
+          "path": [
+            "API",
+            "mdm",
+            "devices",
+            "action"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Stepup Registered to Hub Managed",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{Auth}}",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "aw-tenant-code",
+                "value": "{{Tentant}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;version=3",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action_name\": \"STEP_UP_TO_HUB_MANAGED\",\n  \"filter\": {\n    \"organization_group_uuid\": \"218ee9ef-7cc7-4883-80d7-0c0156272c5c\",\n    \"device_uuids\": [\"aa5e18ee-2f5d-4dbb-b8cc-ce1d59b6b1e6\"]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://{{API}}/API/mdm/devices/action",
+              "protocol": "https",
+              "host": [
+                "{{API}}"
+              ],
+              "path": [
+                "API",
+                "mdm",
+                "devices",
+                "action"
+              ]
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "65"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Correlation-ID",
+              "value": "1c271cb5-2517-44e0-b3e2-b39eba8c5016"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "5000"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "4996"
+            },
+            {
+              "key": "X-RateLimit-Reset",
+              "value": "1782980101"
+            },
+            {
+              "key": "X-Api-Version",
+              "value": "v3"
+            },
+            {
+              "key": "api-supported-versions",
+              "value": "3, 4"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin-allow-popups"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "microphone=(), camera=()"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 02 Jul 2026 08:14:01 GMT"
+            },
+            {
+              "key": "X-Kong-Request-Id",
+              "value": "ce8af1746a09243595b6603c2731be1d"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_count\": 1,\n    \"accepted_count\": 1,\n    \"failed_count\": 0,\n    \"faults\": []\n}"
+        }
+      ]
+    }
+  ]
+}
